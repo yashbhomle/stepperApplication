@@ -1,4 +1,5 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Dialog, DialogTitle, Icon } from "@mui/material";
+import { useState } from "react";
 
 interface IProps {
   handleNext: () => void;
@@ -6,7 +7,9 @@ interface IProps {
 }
 
 function TermsCondition(props: IProps) {
-  const { handleNext, handleBack } = props;
+  const { handleBack } = props;
+  const [openDialog, setOpenDialog] = useState(false);
+
   return (
     <>
       Please accept Terms & Condition
@@ -14,7 +17,9 @@ function TermsCondition(props: IProps) {
         <div>
           <Button
             variant="contained"
-            onClick={handleNext}
+            onClick={() => {
+              setOpenDialog(true);
+            }}
             sx={{ mt: 1, mr: 1 }}
             data-cy="termsBtn"
           >
@@ -25,6 +30,21 @@ function TermsCondition(props: IProps) {
           </Button>
         </div>
       </Box>
+      <Dialog
+        open={openDialog}
+        onClose={() => {
+          setOpenDialog(false);
+        }}
+      >
+        <DialogTitle>
+          <Icon
+            baseClassName="fas"
+            className="fa-plus-circle"
+            color="primary"
+          />
+          {"Data stored"}
+        </DialogTitle>
+      </Dialog>
     </>
   );
 }

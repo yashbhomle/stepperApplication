@@ -4,9 +4,20 @@ import Stepper from "@mui/material/Stepper";
 import PersonalDetails from "./StepperComponents/PersonalDetail";
 import TermsCondition from "./StepperComponents/TermsCondition";
 import AssetDetail from "./StepperComponents/AssetDetail";
+// import { useSelector } from "react-redux";
+// import { RootState } from "../store/store";
+
+export interface IUserData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  assetName: string;
+  assetNumber: string;
+}
 
 function UserDetail() {
   const [activeStep, setActiveStep] = useState(0);
+  // const details = useSelector((store: RootState) => store.StepperData.userData);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -15,10 +26,6 @@ function UserDetail() {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-
-  // const handleReset = () => {
-  //   setActiveStep(0);
-  // };
 
   return (
     <Box sx={{ maxWidth: 400 }}>
