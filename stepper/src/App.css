@@ -1,0 +1,29 @@
+body {
+  background-color: rgb(47, 46, 46);
+  color: white;
+}
+
+.BaseContainer {
+  position: absolute;
+  top: 30vh;
+  padding: 0px 0px 0px 0px !important;
+  /* display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center; */
+}
+
+.baseCard {
+  background-color: rgb(140, 140, 140);
+}
+
+.StepperContainer {
+  background-color: rgb(214, 213, 212);
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+  color: black;
+}
+
+.contain {
+  text-align: center;
+}
